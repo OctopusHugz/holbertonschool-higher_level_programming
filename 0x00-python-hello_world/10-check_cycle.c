@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 		return (0);
 
 	node = list;
-	while (node)
+	while (node && node->next)
 	{
 		if (node->next > node)
 			return (1);
