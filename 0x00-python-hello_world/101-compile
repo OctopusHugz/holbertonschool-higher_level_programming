@@ -1,4 +1,4 @@
 #!/bin/bash
-python3 -m py_compile $PYFILE
-mv ./__pycache__/main.cpython-34.pyc main.pyc
-rm -rf ./__pycache__
+export OUTPUT="${PYFILE}c"
+python3 -c "import py_compile
+py_compile.compile('$PYFILE', '$OUTPUT')"
