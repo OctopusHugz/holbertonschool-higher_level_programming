@@ -10,12 +10,14 @@ int check_cycle(listint_t *list)
 {
 	listint_t *node = list;
 
+	if (node == NULL)
+		return (0);
+
 	while (node)
 	{
 		if (node->next > node)
 			return (1);
 		node = node->next;
 	}
-
 	return (0);
 }
