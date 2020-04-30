@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+import hidden_4
 pass
 if __name__ == "__main__":
-    print("my_secret_santa")
-    print("print_holberton")
-    print("print_school")
+    modules = dir(hidden_4)
+    for i in modules:
+        if i[0] != '_':
+            print(i)
