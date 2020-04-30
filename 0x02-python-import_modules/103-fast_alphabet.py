@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-__import__("alpha_103")
+from alpha_103 import string
+string
