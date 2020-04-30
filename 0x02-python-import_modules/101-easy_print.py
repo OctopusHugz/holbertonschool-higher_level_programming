@@ -1,2 +1,1 @@
-#!/usr/bin/python3
-import os; os.write(1, b"#pythoniscool\n")
+python3 -c 'from os import write; write(1, b"#pythoniscool\n")'
