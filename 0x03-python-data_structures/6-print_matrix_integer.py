@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    k = 0
-    if (matrix[k]):
+    if (matrix[0]):
         num_lists = len(matrix)
         for i in range(num_lists):
             list_items = len(matrix[i])
