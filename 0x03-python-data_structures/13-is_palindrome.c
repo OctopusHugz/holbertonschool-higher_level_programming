@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * is_palindrome - checks if a singly linked list is a palindrome
@@ -10,11 +11,40 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *node;
+	int array[1024], i = 0, half = 0, increment = 1, decrement = 0, length = 0;
 
 	if (*head == NULL)
 		return (1);
 	node = *head;
 	while (node)
+	{
+		array[i] = node->n;
 		node = node->next;
-	return (0);
+		i++;
+	}
+	length = i;
+	if (length % 2 == 0)
+		half = length / 2 - 1;
+	else
+		half = length / 2;
+	printf("half is: %d\n", half);
+	while (i > half)
+	{
+		if (length % 2 == 0)
+		{
+			if (array[half - decrement] == array[half + increment])
+				increment++, decrement++, i--;
+			else
+				return (0);
+		}
+		else
+		{
+			increment = 1, decrement = 1;
+			if (array[half - decrement] == array[half + increment])
+				increment++, decrement++, i--;
+			else
+				return (0);
+		}
+	}
+	return (1);
 }
