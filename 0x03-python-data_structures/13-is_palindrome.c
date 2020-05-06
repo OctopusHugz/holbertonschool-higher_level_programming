@@ -11,7 +11,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *node;
-	int array[1024], i = 0, half = 0, increment = 1, decrement = 0, length = 0;
+	int array[2048], i = 0, half = 0, increment = 1, decrement = 0, length = 0;
 
 	if (*head == NULL)
 		return (1);
