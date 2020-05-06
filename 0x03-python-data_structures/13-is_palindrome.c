@@ -27,7 +27,6 @@ int is_palindrome(listint_t **head)
 		half = length / 2 - 1;
 	else
 		half = length / 2;
-	printf("half is: %d\n", half);
 	while (i > half)
 	{
 		if (length % 2 == 0)
