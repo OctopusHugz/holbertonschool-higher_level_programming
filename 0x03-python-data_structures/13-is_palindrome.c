@@ -16,7 +16,7 @@ int is_palindrome(listint_t **head)
 	node = *head;
 	while (node)
 	{
-		if (node->n = node->next->n)
+		if (node->n == node->next->n)
 			return (1);
 		node = node->next;
 	}
