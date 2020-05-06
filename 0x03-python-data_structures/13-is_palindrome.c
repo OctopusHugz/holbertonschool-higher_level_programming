@@ -23,14 +23,12 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	half = i / 2 - 1;
-	printf("half is: %d\n", half);
 	while (i > half + 1)
 	{
 		if (array[half - decrement] == array[half + increment])
-			printf("Repeat found at %d\n", array[half - decrement]);
+			increment++, decrement++, i--;
 		else
 			return (0);
-		increment++, decrement++, i--;
 	}
 	return (1);
 }
