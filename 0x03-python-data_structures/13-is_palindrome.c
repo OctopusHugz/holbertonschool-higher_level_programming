@@ -18,5 +18,5 @@ int is_palindrome(listint_t **head)
 	{
 		node = node->next;
 	}
-	return (0);
+	return (1);
 }
