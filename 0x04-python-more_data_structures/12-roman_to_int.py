@@ -16,7 +16,7 @@ def roman_to_int(roman_string):
     if len(new_list) > 1:
         last = new_list[-1]
     for values in new_list:
-        if first > last:
+        if first >= last:
             result += values
     if result == 0:
         for values in reversed(new_list):
