@@ -4,6 +4,7 @@ def roman_to_int(roman_string):
     result = 0
     count = 0
     last = 0
+    flag = 0
     roman_dict = {'I': 1, 'V': 5, 'X': 10,
                   'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     if type(roman_string) is not str and type(roman_string) is not None:
@@ -20,10 +21,11 @@ def roman_to_int(roman_string):
             result += values
     if result == 0:
         for values in reversed(new_list):
-            if count == 0 or num == values:
+            if count == 0 or num == values and flag != 1:
                 result += values
             else:
                 result -= values
+                flag = 1
             num = values
             count += 1
     return result
