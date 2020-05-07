@@ -20,9 +20,10 @@ def roman_to_int(roman_string):
             result += values
     if result == 0:
         for values in reversed(new_list):
-            if count == 0 or result == values:
+            if count == 0 or num == values:
                 result += values
             else:
                 result -= values
+            num = values
             count += 1
     return result
