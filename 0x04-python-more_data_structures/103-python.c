@@ -15,7 +15,8 @@ void print_python_list(PyObject *p)
 	PyListObject *object = (PyListObject *)p;
 
 	printf("[*] Python List Info\n");
-	printf("[*] Size of the Python List = %d\n[*] Allocated = %lu\n", len, object->allocated);
+	printf("[*] Size of the Python List = %d\n")
+	printf("[*] Allocated = %lu\n", len, object->allocated);
 	while (count < len)
 	{
 		printf("Element %d: %s\n", count, Py_TYPE(object->ob_item[count])->tp_name);
@@ -32,5 +33,4 @@ void print_python_bytes(PyObject *p)
 {
 	if (p)
 		printf("[.] bytes object info\n");
-	return;
 }
