@@ -3,7 +3,7 @@
 initializes a private size attribute"""
 
 
-class Square():
+class Square:
     """This Square class initializes the instance's private size attribute"""
 
     def __init__(self, size=0):
