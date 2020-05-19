@@ -1,5 +1,13 @@
 #!/usr/bin/python3
-class Square():
+"""This module declares a Square class that initializes a private
+size attribute if the size argument is verified. It then computes
+the area of the Square that was instantiated"""
+
+
+class Square:
+    """This Square class initializes the instance's private size attribute
+after verifying it. It then uses that size attribute to compute its area"""
+
     def __init__(self, size=0):
         if isinstance(size, int):
             self.__size = size
