@@ -8,6 +8,8 @@ class Square:
 after verifying it"""
 
     def __init__(self, size=0):
+        """This function initializes an instance of the Square class and assigns
+the private attribute size to the instance if size is the correct int type."""
         if isinstance(size, int):
             self.__size = size
         else:
