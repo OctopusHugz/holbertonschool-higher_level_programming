@@ -27,7 +27,7 @@ and returns it"""
     @size.setter
     def size(self, value):
         """This setter function validates the size argument given at instantiation.
-If valid, it sets the size attribute for the instance. """
+If valid, it sets the size attribute for the instance."""
         try:
             self.__size = value
         except ValueError:
@@ -45,7 +45,7 @@ and returns it"""
     def position(self, value):
         """This setter function validates the position argument given at instantiation.
 If valid, it sets the position attribute for the instance."""
-        if isinstance(value, tuple):
+        if isinstance(value, tuple) and len(a) == 2:
             if isinstance(value[0], int) and isinstance(value[1], int):
                 if value[0] >= 0 and value[1] >= 0:
                     self.__position = value
