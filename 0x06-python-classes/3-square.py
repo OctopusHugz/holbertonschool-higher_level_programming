@@ -9,6 +9,8 @@ class Square:
 after verifying it. It then uses that size attribute to compute its area"""
 
     def __init__(self, size=0):
+        """This function initializes an instance of the Square class and assigns
+the private attribute size to the instance if size is the correct int type."""
         if isinstance(size, int):
             self.__size = size
         else:
@@ -17,4 +19,6 @@ after verifying it. It then uses that size attribute to compute its area"""
             raise ValueError("size must be >= 0")
 
     def area(self):
+        """This function takes the size attribute of the object and uses
+it to compute its area"""
         return self.__size ** 2
