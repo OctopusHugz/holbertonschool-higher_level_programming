@@ -14,7 +14,7 @@ its area"""
     def __init__(self, size=0, position=(0, 0)):
         """This function initializes an instance of the Square class and assigns
 the private attribute size to the instance if size is the correct int type. It
-then assigns the private attribute position once it's validated."""
+then assigns the private attribute position once it 's validated."""
         self.__size = size
         self.__position = position
 
@@ -27,13 +27,12 @@ and returns it"""
     @size.setter
     def size(self, value):
         """This setter function validates the size argument given at instantiation.
-If valid, it sets the size attribute for the instance."""
-        if isinstance(value, int):
-            if value > 0:
-                self.__size = value
-            else:
-                raise ValueError("size must be >= 0")
-        else:
+If valid, it sets the size attribute for the instance. """
+        try:
+            self.__size = value
+        except ValueError:
+            raise ValueError("size must be >= 0")
+        except TypeError:
             raise TypeError("size must be an integer")
 
     @property
