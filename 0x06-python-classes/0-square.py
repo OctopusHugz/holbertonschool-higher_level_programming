@@ -2,6 +2,6 @@
 """This module declares a Square class that does nothing"""
 
 
-class Square():
+class Square:
     """This Square class does nothing"""
     pass
