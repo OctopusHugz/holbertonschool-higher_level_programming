@@ -27,7 +27,7 @@ spaces for positioning """
         size = self.size
         position = self.position
         if size == 0:
-            string += "\n"
+            return ""
         else:
             if position[1] > 0:
                 while lines < position[1]:
