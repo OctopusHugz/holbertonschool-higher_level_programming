@@ -5,7 +5,7 @@ the area of the Square that was instantiated using a setter function.
 It also handles the positioning of the square."""
 
 
-class Square():
+class Square:
     """This Square class initializes the instance's private size and position
 attribute after verifying it in the setter function. It then uses the getter
 function to obtain that size attribute. It then uses that size to compute
@@ -15,8 +15,8 @@ its area"""
         """This function initializes an instance of the Square class and assigns
 the private attribute size to the instance if size is the correct int type. It
 then assigns the private attribute position once it 's validated."""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -28,11 +28,12 @@ and returns it"""
     def size(self, value):
         """This setter function validates the size argument given at instantiation.
 If valid, it sets the size attribute for the instance."""
-        try:
-            self.__size = value
-        except ValueError:
-            raise ValueError("size must be >= 0")
-        except TypeError:
+        if isinstance(value, int):
+            if value >= 0:
+                self.__size = value
+            else:
+                raise ValueError("size must be >= 0")
+        else:
             raise TypeError("size must be an integer")
 
     @property
@@ -44,13 +45,19 @@ and returns it"""
     @position.setter
     def position(self, value):
         """This setter function validates the position argument given at instantiation.
-If valid, it sets the position attribute for the instance."""
-        if isinstance(value, tuple) and len(a) == 2:
-            if isinstance(value[0], int) and isinstance(value[1], int):
-                if value[0] >= 0 and value[1] >= 0:
-                    self.__position = value
-        else:
+If valid, it sets the position attribute for the instance. """
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            pass
+        if not isinstance(value[0], int) or not isinstance(value[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            pass
+        if not value[0] >= 0 or not value[1] >= 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
 
     def area(self):
         """This function takes the size attribute of the object and uses
