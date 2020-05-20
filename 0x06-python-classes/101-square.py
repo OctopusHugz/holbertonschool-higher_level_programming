@@ -18,6 +18,9 @@ then assigns the private attribute position once it 's validated."""
         self.size = size
         self.position = position
 
+    def __str__(self):
+        return str(Square.my_print(self))
+
     @property
     def size(self):
         """This getter function gets the size attribute of the instance
