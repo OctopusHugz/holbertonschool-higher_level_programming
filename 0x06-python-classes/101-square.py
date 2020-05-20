@@ -87,10 +87,3 @@ spaces for positioning"""
                     j += 1
                 print("#")
                 i += 1
-
-
-def main():
-    Square.my_print(self)
-
-
-main()
