@@ -64,22 +64,24 @@ it to compute its area"""
         """This function prints the square using the # character. It also prints
 spaces for positioning"""
         i = 0
+        lines = 1
         size = self.size
         position = self.position
         if size == 0:
             print()
-        else:
-            if position[1] > 0:
+        if position[1] > 0:
+            while lines < position[1]:
                 print()
-            while i < size:
-                j = 0
-                k = 0
-                while j < size:
-                    while k < position[0]:
-                        print(" ", end='')
-                        k += 1
-                    if j != size - 1:
-                        print("#", end='')
-                    j += 1
-                print("#")
-                i += 1
+                lines += 1
+        while i < size:
+            j = 0
+            k = 0
+            while j < size:
+                while k < position[0]:
+                    print(" ", end='')
+                    k += 1
+                if j != size - 1:
+                    print("#", end='')
+                j += 1
+            print("#")
+            i += 1
