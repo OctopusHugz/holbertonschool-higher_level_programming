@@ -54,7 +54,7 @@ If valid, it sets the position attribute for the instance. """
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             pass
-        if not value[0] >= 0 or not value[1] >= 0:
+        if not value[0] > 0 or not value[1] >= 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
