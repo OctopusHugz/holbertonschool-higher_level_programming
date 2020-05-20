@@ -19,7 +19,7 @@ then assigns the private attribute position once it 's validated."""
         self.position = position
 
     def __str__(self):
-        return str(Square.my_print(self))
+        return str(self.my_print())
 
     @property
     def size(self):
@@ -71,13 +71,16 @@ it to compute its area"""
         """This function prints the square using the # character. It also prints
 spaces for positioning"""
         i = 0
+        lines = 0
         size = self.__size
         position = self.__position
         if size == 0:
             print()
         else:
             if position[1] > 0:
-                print()
+                while lines < position[1]:
+                    print()
+                    lines += 1
             while i < size:
                 j = 0
                 k = 0
