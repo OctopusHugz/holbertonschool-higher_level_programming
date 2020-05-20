@@ -48,13 +48,9 @@ and returns it"""
 If valid, it sets the position attribute for the instance. """
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            pass
-        if not isinstance(value[0], int) or not isinstance(value[1], int):
+        elif not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            pass
-        if not value[0] > 0 or not value[1] >= 0:
+        elif not value[0] >= 0 or not value[1] >= 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -62,14 +58,14 @@ If valid, it sets the position attribute for the instance. """
     def area(self):
         """This function takes the size attribute of the object and uses
 it to compute its area"""
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         """This function prints the square using the # character. It also prints
 spaces for positioning"""
         i = 0
-        size = self.__size
-        position = self.__position
+        size = self.size
+        position = self.position
         if size == 0:
             print()
         else:
