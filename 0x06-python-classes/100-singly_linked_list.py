@@ -29,7 +29,7 @@ class Node:
     def next_node(self, value):
         if value is None:
             self.__next_node = None
-        elif isinstance(value, Node):  # and isinstance(self, Node):
+        elif isinstance(value, Node):
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
@@ -55,6 +55,9 @@ class SinglyLinkedList:
             return
         else:
             tail = self.__head
+            if value < tail.data:
+                self.__head = Node(value, tail)
+                return
             while tail and tail.next_node:
                 tail = tail.next_node
             tail.next_node = Node(value)
