@@ -8,7 +8,7 @@ class MagicClass:
     """This MagicClass class initializes the instance's private radius attribute
 after verifying it. It also computers area or circumference based on radius."""
 
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         self.__radius = 0
         """This function initializes an instance of the MagicClass class and assigns
 the private attribute radius to the instance if radius is the correct int or
