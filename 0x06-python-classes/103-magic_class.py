@@ -12,7 +12,7 @@ after verifying it. It also computers area or circumference based on radius."""
         """This function initializes an instance of the MagicClass class and assigns
 the private attribute radius to the instance if radius is the correct int or
 float type."""
-        if type(radius) is not int or type(radius) is not float:
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
@@ -23,4 +23,4 @@ float type."""
     def circumference(self):
         """This function returns the calculated circumference based off
 the radius"""
-        return self.__radius * 2 * math.pi
+        return 2 * math.pi * self.__radius
