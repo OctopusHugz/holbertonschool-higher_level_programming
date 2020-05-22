@@ -3,4 +3,5 @@
 
 
 class Rectangle:
+    """This class does nothing"""
     pass
