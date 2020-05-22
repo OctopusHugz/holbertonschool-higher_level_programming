@@ -1,0 +1,59 @@
+===========================
+IMPORT FUNCTION FOR TESTING
+===========================
+
+>>> print_square = __import__('4-print_square').print_square
+
+===============
+PARAMETER TESTS
+===============
+
+================ TYPE CHECKS ================
+
+---> Size as string <---
+>>> print_square("holbie")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+---> Size as float <---
+>>> print_square("42.98")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+---> Size as tuple <---
+>>> print_square((42, 98))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+---> Size as list <---
+>>> print_square([42, 98])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+---> Size as set <---
+>>> print_square({42, 98})
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+---> Size as bool <---
+>>> print_square(True)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+---> Size as negative float <---
+>>> print_square(-42.98)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+================ VALUE CHECKS ================
+
+---> Size as negative integer <---
+>>> print_square(-42)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+============
+OUTPUT TESTS
+============
+
+
