@@ -1,0 +1,161 @@
+---------------> IMPORT FUNCTION FOR TESTING <---------------
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+---------------> PARAMETER TESTS <---------------
+
+================ MATRIX TYPE CHECKS ================
+
+---> Divide list of integers by positive number <---
+>>> matrix_divided([1, 2, 3, 4, 5, 6], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide list of floats by positive number <---
+>>> matrix_divided([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide set of integers by positive number <---
+>>> matrix_divided({1, 2, 3, 4, 5, 6}, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide set of floats by positive number <---
+>>> matrix_divided({1.0, 2.0, 3.0, 4.0, 5.0, 6.0}, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide tuple of lists of integers by positive number <---
+>>> matrix_divided(([1, 2, 3], [4, 5, 6]), 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide tuple of lists of floats by positive number <---
+>>> matrix_divided(([1.0, 2.0, 3.0], [4.0, 5.0, 6.0]), 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide tuple of sets of integers by positive number <---
+>>> matrix_divided(({1, 2, 3}, {4, 5, 6}), 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide tuple of sets of floats by positive number <---
+>>> matrix_divided(({1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}), 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide a string by positive number <---
+>>> matrix_divided("hello", 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide a list of strings by positive number <---
+>>> matrix_divided(["hello", "world", "goodbye"], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide a list of lists of strings by positive number <---
+>>> matrix_divided([["hello", "world", "goodbye"], ["aloha", "mundo", "adios"]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide a list of sets of strings by positive number <---
+>>> matrix_divided([{"hello", "world", "goodbye"}, {"aloha", "mundo", "adios"}], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide mixed type matrix by positive number <---
+>>> matrix_divided([[1, "hello", (3, 3)], [4.0, 5.5, [6]]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide None by positive number <---
+>>> matrix_divided(None, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---> Divide a matrix with 1 list by positive number <---
+>>> matrix_divided([[1, 2, 3, 4, 5, 6]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+================ MATRIX ROW CHECKS ================
+
+---> Divide a matrix of uneven size by positive number <---
+>>> matrix_divided([[1, 2], [3, 4, 5, 6]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+---> Divide a matrix of uneven size by positive number <---
+>>> matrix_divided([[1, 2, 3, 4], [5, 6]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+---> Divide a matrix of uneven size by positive number <---
+>>> matrix_divided([[1], [2, 3, 4, 5, 6]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+---> Divide a matrix of uneven size by positive number <---
+>>> matrix_divided([[1, 2, 3, 4, 5], [6]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+---> Divide a matrix of uneven size by positive number <---
+>>> matrix_divided([[], [1, 2, 3, 4, 5, 6]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+---> Divide a matrix of uneven size by positive number <---
+>>> matrix_divided([[1, 2, 3, 4, 5, 6], []], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+---> Divide a matrix of uneven size by positive number <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9, 10]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+================ DIV TYPE CHECKS ================
+
+---> Divide matrix by string <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "hello")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+---> Divide matrix by tuple <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], (1, 2))
+Traceback (most recent call last):
+TypeError: div must be a number
+
+---> Divide matrix by list <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], [1, 2])
+Traceback (most recent call last):
+TypeError: div must be a number
+
+---> Divide matrix by set <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], {1, 2})
+Traceback (most recent call last):
+TypeError: div must be a number
+
+---> Divide matrix by boolean <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], True)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+---> Divide matrix by 0 <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+---------------> OPERATION TESTS <---------------
+
+---> Divide matrix by positive number <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+---> Divide matrix by negative number <---
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], -3)
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
