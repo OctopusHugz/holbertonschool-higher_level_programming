@@ -1,0 +1,118 @@
+<===========================================================>
+*=============== IMPORT FUNCTION FOR TESTING ===============*
+<===========================================================>
+
+===========================
+IMPORT FUNCTION FOR TESTING
+===========================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+<===============================================>
+*=============== PARAMETER TESTS ===============*
+<===============================================>
+
+================ FIRST_NAME TYPE CHECKS ================
+
+---> First name as positive integer <---
+>>> say_my_name(42, "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as negative integer <---
+>>> say_my_name(-42, "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as positive float <---
+>>> say_my_name(42.98, "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as negative float <---
+>>> say_my_name(-42.98, "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as tuple <---
+>>> say_my_name((42, 98), "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as list <---
+>>> say_my_name([42, 98], "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as set <---
+>>> say_my_name({42, 98}, "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as bool <---
+>>> say_my_name(True, "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as None <---
+>>> say_my_name(None, "holbie")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+---> First name as None and only 1 argument <---
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+================ LAST_NAME TYPE CHECKS ================
+
+---> Last name as positive integer <---
+>>> say_my_name("holbie", 42)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as negative integer <---
+>>> say_my_name("holbie", -42)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as positive float <---
+>>> say_my_name("holbie", 42.98)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as negative float <---
+>>> say_my_name("holbie", -42.98)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as tuple <---
+>>> say_my_name("holbie", (42, 98))
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as list <---
+>>> say_my_name("holbie", [42, 98])
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as set <---
+>>> say_my_name("holbie", {42, 98})
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as bool <---
+>>> say_my_name("holbie", True)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---> Last name as None <---
+>>> say_my_name("holbie", None)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+---------------> OPERATION TESTS <---------------
+
+---> Testing both simple strings <---
+>>> say_my_name("Holbie", "Seahorse")
+My name is Holbie Seahorse
