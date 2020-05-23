@@ -9,6 +9,9 @@ the function is an integer. Then prints a square using that integer as size."""
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
+    if size == 0:
+        print()
+        return
     rows = 0
     while rows < size:
         cols = 0

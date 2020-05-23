@@ -116,3 +116,7 @@ TypeError: last_name must be a string
 ---> Testing both simple strings <---
 >>> say_my_name("Holbie", "Seahorse")
 My name is Holbie Seahorse
+
+---> Testing one simple string <---
+>>> say_my_name("Holbie")
+My name is Holbie 

@@ -56,4 +56,17 @@ ValueError: size must be >= 0
 OUTPUT TESTS
 ============
 
+---> Size as positive integer <---
+>>> print_square(4)
+####
+####
+####
+####
 
+---> Size as 0 <---
+>>> print_square(0)
+<BLANKLINE>
+
+---> Size as 1 <---
+>>> print_square(1)
+#
