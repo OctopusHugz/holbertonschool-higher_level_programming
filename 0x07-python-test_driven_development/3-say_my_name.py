@@ -9,4 +9,7 @@ the function are strings. Then prints a statement using those names."""
         raise TypeError("first_name must be a string")
     if type(last_name) is not str:
         raise TypeError("last_name must be a string")
+    if first_name == "" and last_name == "":
+        print("My name is   ")
+        return
     print("My name is {} {}".format(first_name, last_name))
