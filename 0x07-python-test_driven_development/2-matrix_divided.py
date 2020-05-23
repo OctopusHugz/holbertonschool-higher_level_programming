@@ -22,14 +22,16 @@ if valid."""
         for lists in matrix:
             if type(lists) is not list:
                 raise TypeError(
-                    "matrix must be a matrix (list of lists) of integers/floats")
+                    """matrix must be a matrix (list of lists) of
+                    integers/floats""")
             if len(lists) != length:  # or not matrix[1]:
                 raise TypeError(
                     "Each row of the matrix must have the same size")
             for items in lists:
                 if type(items) not in [float, int]:
                     raise TypeError(
-                        "matrix must be a matrix (list of lists) of integers/floats")
+                        """matrix must be a matrix (list of lists) of
+                        integers/floats""")
                 new_item = round(items / div, 2)
                 new_matrix[count].append(new_item)
             count += 1
