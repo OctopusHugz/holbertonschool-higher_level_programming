@@ -22,7 +22,8 @@ class Rectangle:
             while cols < self.__width:
                 string += "#"
                 cols += 1
-            string += "\n"
+            if rows + 1 != self.__height:
+                string += "\n"
             rows += 1
         return string
 
