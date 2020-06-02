@@ -1,0 +1,31 @@
+===========================
+IMPORT FUNCTION FOR TESTING
+===========================
+
+>>> print_sorted = __import__('1-my_list').MyList.print_sorted
+
+===============
+PARAMETER TESTS
+===============
+
+---> Testing type as set <---
+>>> print_sorted({5, 3, 1, 2, 4})
+Traceback (most recent call last):
+TypeError: input must be a list
+
+---> Testing type as None <---
+>>> print_sorted(None)
+Traceback (most recent call last):
+TypeError: input must be a list
+
+============
+OUTPUT TESTS
+============
+
+---> Testing output <---
+>>> print_sorted([5, 3, 1, 2, 4])
+[1, 2, 3, 4, 5]
+
+---> Testing output <---
+>>> print_sorted([100, 13, 98, 42, 22, -98])
+[-98, 13, 22, 42, 98, 100]
