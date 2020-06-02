@@ -1,0 +1,25 @@
+===========================
+IMPORT FUNCTION FOR TESTING
+===========================
+
+>>> integer_validator = __import__('7-base_geometry').BaseGeometry.integer_validator
+
+===============
+PARAMETER TESTS
+===============
+
+---> Testing type as list <---
+>>> integer_validator("my_int", [42, 98])
+Traceback (most recent call last):
+TypeError:
+
+---> Testing type as None <---
+>>> integer_validator("my_int", None)
+Traceback (most recent call last):
+TypeError:
+
+============
+OUTPUT TESTS
+============
+---> Testing type as list <---
+>>> integer_validator("my_int", 42)
