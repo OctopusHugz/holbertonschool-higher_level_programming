@@ -13,6 +13,16 @@ PARAMETER TESTS
 Traceback (most recent call last):
 TypeError: input must be a list
 
+---> Testing type as tuple <---
+>>> print_sorted((5, 3))
+Traceback (most recent call last):
+TypeError: input must be a list
+
+---> Testing type as string <---
+>>> print_sorted("holbie")
+Traceback (most recent call last):
+TypeError: input must be a list
+
 ---> Testing type as None <---
 >>> print_sorted(None)
 Traceback (most recent call last):
@@ -22,10 +32,18 @@ TypeError: input must be a list
 OUTPUT TESTS
 ============
 
----> Testing output <---
+---> Testing positive integers <---
 >>> print_sorted([5, 3, 1, 2, 4])
 [1, 2, 3, 4, 5]
 
----> Testing output <---
+---> Testing positive and negative integers <---
 >>> print_sorted([100, 13, 98, 42, 22, -98])
 [-98, 13, 22, 42, 98, 100]
+
+---> Testing 1 integer <---
+>>> print_sorted([4])
+[4]
+
+---> Testing 2 negative integers <---
+>>> print_sorted([-3, -4])
+[-4, -3]

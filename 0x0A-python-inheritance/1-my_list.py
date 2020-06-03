@@ -7,6 +7,6 @@ class MyList(list):
 
     def print_sorted(self):
         """This module prints the MyList instance in sorted order"""
-        if type(self) != list or not isinstance(self, list):
+        if type(self) != list:
             raise TypeError("input must be a list")
         print(sorted(self))
