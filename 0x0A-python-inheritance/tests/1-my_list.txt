@@ -27,3 +27,7 @@ OUTPUT TESTS
 ---> Testing 2 negative integers <---
 >>> print_sorted([-3, -4])
 [-4, -3]
+
+---> Testing empty list <---
+>>> print_sorted([])
+[]
