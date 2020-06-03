@@ -5,9 +5,9 @@
 class MyInt(int):
     """This is an instance of the MyInt class"""
 
-    def __ne__(self, other):
-        """This function sets the != logic to the == logic"""
-        if self == other:
+    def __eq__(self, other):
+        """This function sets the == logic to the != logic"""
+        if self != other:
             return True
         else:
             return False
