@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module implements the save_to_json_file function"""
+"""This module implements the load_from_json_file function"""
 import json
 
 
