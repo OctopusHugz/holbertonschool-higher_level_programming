@@ -11,18 +11,15 @@ PARAMETER TESTS
 ---> Testing type as list <---
 >>> integer_validator("my_int", [42, 98])
 Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
+TypeError:
 
 ---> Testing type as None <---
 >>> integer_validator("my_int", None)
 Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
+TypeError:
 
 ============
 OUTPUT TESTS
 ============
-
 ---> Testing type as list <---
 >>> integer_validator("my_int", 42)
-Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
