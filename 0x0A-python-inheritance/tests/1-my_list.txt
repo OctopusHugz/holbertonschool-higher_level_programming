@@ -8,6 +8,12 @@ IMPORT FUNCTION FOR TESTING
 PARAMETER TESTS
 ===============
 
+---> Testing no arguments <---
+>>> print_sorted()
+Traceback (most recent call last):
+TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+
 ============
 OUTPUT TESTS
 ============
