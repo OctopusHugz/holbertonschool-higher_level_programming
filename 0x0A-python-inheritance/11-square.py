@@ -13,7 +13,7 @@ class Square(Rectangle):
             self.integer_validator("size", size)
             self.__size = size
         except Exception as e:
-            print(e)
+            pass
 
     def __str__(self):
         """This function returns a string representation of a Square
