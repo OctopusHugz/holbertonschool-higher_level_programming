@@ -15,19 +15,16 @@ class Student:
         """This function returns a dictionary representation of the instance"""
         strings_list = []
         new_dict = {}
-        if attrs:
-            if type(attrs) is list:
-                for strings in attrs:
-                    if type(strings) != str:
-                        return self.__dict__
-                    if strings in self.__dict__.keys():
-                        strings_list.append(strings)
-                new_dict = new_dict.fromkeys(strings_list)
-                for keys in new_dict.keys():
-                    value = getattr(self, keys)
-                    new_dict[keys] = value
-                return new_dict
-            else:
-                return self.__dict__
+        if attrs and type(attrs) == list:
+            for strings in attrs:
+                if type(strings) != str:
+                    return self.__dict__
+                if strings in self.__dict__.keys():
+                    strings_list.append(strings)
+            new_dict = new_dict.fromkeys(strings_list)
+            for keys in new_dict.keys():
+                value = getattr(self, keys)
+                new_dict[keys] = value
+            return new_dict
         else:
             return self.__dict__
