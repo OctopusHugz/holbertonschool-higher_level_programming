@@ -25,5 +25,7 @@ class Student:
                     value = getattr(self, attributes)
                     new_dict[attributes] = value
                 return new_dict
+            else:
+                return self.__dict__
         else:
             return self.__dict__
