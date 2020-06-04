@@ -26,3 +26,5 @@ TypeError: integer_validator() missing 3 required positional arguments: 'self', 
 ============
 OUTPUT TESTS
 ============
+---> Testing type as list <---
+>>> integer_validator("my_int", 42)
