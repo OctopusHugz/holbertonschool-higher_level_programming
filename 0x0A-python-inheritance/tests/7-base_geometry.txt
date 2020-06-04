@@ -26,7 +26,3 @@ TypeError: integer_validator() missing 3 required positional arguments: 'self', 
 ============
 OUTPUT TESTS
 ============
----> Testing type as list <---
->>> integer_validator("my_int", 42)
-Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
