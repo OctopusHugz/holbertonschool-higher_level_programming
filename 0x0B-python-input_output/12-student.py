@@ -15,10 +15,7 @@ class Student:
         """This function returns a dictionary representation of the instance"""
         strings_list = []
         new_dict = {}
-        for strings in attrs:
-            if type(strings) != str:
-                return self.__dict__
-        if type(attrs) == list:
+        if type(attrs) == list and all([type(strs) == str for strs in attrs]):
             for strings in attrs:
                 if strings in self.__dict__.keys():
                     strings_list.append(strings)
