@@ -5,9 +5,13 @@
 class MyInt(int):
     """This is an instance of the MyInt class"""
 
+    def __init__(self, value):
+        self.value = value
+
     def __eq__(self, other):
         """This function sets the == logic to the != logic"""
-        if self != other:
-            return True
-        else:
-            return False
+        return self.value != other
+
+    def __ne__(self, other):
+        """This function sets the != logic to the == logic"""
+        return self.value == other
