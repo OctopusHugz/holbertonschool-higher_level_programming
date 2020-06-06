@@ -69,3 +69,13 @@ attributes"""
                 self.y = kwargs["y"]
             except Exception as e:
                 pass
+
+    def to_dictionary(self):
+        """This function returns the dictionary representation of a Square"""
+        attrs = ["id", "size", "x", "y"]
+        new_dict = {}
+        new_dict = new_dict.fromkeys(attrs)
+        for strings in attrs:
+            value = (getattr(self, strings))
+            new_dict[strings] = value
+        return new_dict
