@@ -93,3 +93,26 @@ class Rectangle(Base):
                 cols += 1
             print()
             rows += 1
+
+    def update(self, *args):
+        """This function assigns an argument to each attribute"""
+        try:
+            self.id = args[0]
+        except Exception as e:
+            pass
+        try:
+            self.__width = args[1]
+        except Exception as e:
+            pass
+        try:
+            self.__height = args[2]
+        except Exception as e:
+            pass
+        try:
+            self.__x = args[3]
+        except Exception as e:
+            pass
+        try:
+            self.__y = args[4]
+        except Exception as e:
+            pass
