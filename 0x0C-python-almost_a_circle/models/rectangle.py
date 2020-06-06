@@ -80,9 +80,14 @@ class Rectangle(Base):
 
     def display(self):
         """This function prints the Rectangle to stdout"""
+        right_shift = self.__x
+        down_shift = self.__y
+        for rows in range(down_shift):
+            print()
         rows = 0
         for rows in range(self.__height):
             cols = 0
+            print(" " * right_shift, end="")
             for cols in range(self.__width):
                 print("#", end="")
                 cols += 1
