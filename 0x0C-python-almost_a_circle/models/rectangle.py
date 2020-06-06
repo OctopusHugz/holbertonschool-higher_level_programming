@@ -94,25 +94,47 @@ class Rectangle(Base):
             print()
             rows += 1
 
-    def update(self, *args):
-        """This function assigns an argument to each attribute"""
-        try:
-            self.id = args[0]
-        except Exception as e:
-            pass
-        try:
-            self.__width = args[1]
-        except Exception as e:
-            pass
-        try:
-            self.__height = args[2]
-        except Exception as e:
-            pass
-        try:
-            self.__x = args[3]
-        except Exception as e:
-            pass
-        try:
-            self.__y = args[4]
-        except Exception as e:
-            pass
+    def update(self, *args, **kwargs):
+        """This function assigns a key/value argument to attributes"""
+        if args and args[0]:
+            try:
+                self.id = args[0]
+            except Exception as e:
+                pass
+            try:
+                self.__width = args[1]
+            except Exception as e:
+                pass
+            try:
+                self.__height = args[2]
+            except Exception as e:
+                pass
+            try:
+                self.__x = args[3]
+            except Exception as e:
+                pass
+            try:
+                self.__y = args[4]
+            except Exception as e:
+                pass
+        else:
+            try:
+                self.id = kwargs["id"]
+            except Exception as e:
+                pass
+            try:
+                self.__width = kwargs["width"]
+            except Exception as e:
+                pass
+            try:
+                self.__height = kwargs["height"]
+            except Exception as e:
+                pass
+            try:
+                self.__x = kwargs["x"]
+            except Exception as e:
+                pass
+            try:
+                self.__y = kwargs["y"]
+            except Exception as e:
+                pass
