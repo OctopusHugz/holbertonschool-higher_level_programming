@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module implements the Base class"""
+"""This module implements the Rectangle class"""
 from models.base import Base
 
 
@@ -16,7 +16,12 @@ class Rectangle(Base):
 
     def __str__(self):
         """This function overrides the __str__ method"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        x = self.__x
+        y = self.__y
+        width = self.__width
+        height = self.__height
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, x, y, width,
+                                                       height)
 
     @property
     def width(self):
@@ -95,7 +100,8 @@ class Rectangle(Base):
             rows += 1
 
     def update(self, *args, **kwargs):
-        """This function assigns a key/value argument to attributes"""
+        """This function assigns a key/value argument to the Rectangle
+instance's attributes"""
         if args and args[0]:
             try:
                 self.id = args[0]
