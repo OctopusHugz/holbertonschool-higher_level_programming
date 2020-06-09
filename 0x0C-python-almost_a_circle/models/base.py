@@ -36,3 +36,12 @@ to a file"""
                 for objs in list_objs:
                     new_list.append(cls.to_dictionary(objs))
                 fp.write(cls.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """This function returns the list of the JSON string representation"""
+        new_list = []
+        if json_string is None:
+            return new_list
+        else:
+            return json.loads(json_string)
