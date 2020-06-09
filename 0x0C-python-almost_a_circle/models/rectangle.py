@@ -146,7 +146,8 @@ instance's attributes"""
                 pass
 
     def to_dictionary(self):
-        """This function returns the dictionary representation of a Rectangle"""
+        """This function returns the dictionary representation of a
+Rectangle"""
         attrs = ["id", "width", "height", "x", "y"]
         new_dict = {}
         new_dict = new_dict.fromkeys(attrs)
