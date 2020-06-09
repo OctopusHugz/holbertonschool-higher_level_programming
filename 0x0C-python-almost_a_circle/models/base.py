@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module implements the Base class"""
 import json
+import os
 
 
 class Base:
@@ -21,7 +22,8 @@ class Base:
 list_dictionaries"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        return json.dumps(list_dictionaries)
+        else:
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -56,3 +58,11 @@ to a file"""
             new_inst.__init__(42)
         new_inst.update(**dictionary)
         return new_inst
+
+    @classmethod
+    def load_from_file(cls):
+        """This function returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        new_list = []
+        if not os.path.isfile(filename):
+            return new_list
