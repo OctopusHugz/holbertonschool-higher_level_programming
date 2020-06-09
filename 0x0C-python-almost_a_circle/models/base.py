@@ -20,10 +20,10 @@ class Base:
     def to_json_string(list_dictionaries):
         """This function returns the JSON string representation of
 list_dictionaries"""
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0
+        or not list_dictionaries:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -66,3 +66,9 @@ to a file"""
         new_list = []
         if not os.path.isfile(filename):
             return new_list
+        # with open(filename) as fp:
+        #    json_string = fp.read()
+        cls_dict = cls.to_dictionary(json_string)
+        # print(cls_dict)
+        cls_inst = cls.from_json_string(json_string)
+        # print(cls_inst)
