@@ -45,3 +45,14 @@ to a file"""
             return new_list
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """This function returns an instance with all attributes already set"""
+        new_inst = cls.__new__(cls)
+        if cls.__name__ == "Rectangle":
+            new_inst.__init__(42, 98)
+        elif cls.__name__ == "Square":
+            new_inst.__init__(42)
+        new_inst.update(**dictionary)
+        return new_inst
