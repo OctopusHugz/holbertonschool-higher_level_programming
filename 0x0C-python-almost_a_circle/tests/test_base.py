@@ -32,12 +32,6 @@ class TestBase(unittest.TestCase):
         for files in file_list:
             errors += files.check_all()
         self.assertEqual(errors, 0)
-        # p8s = pep8.StyleGuide(quiet=True)
-        # error_check = p8s.check_files(
-        #    ['test_base.py', 'test_rectangle.py', 'test_square.py',
-        #     '../models/base.py', '../models/rectangle.py',
-        #     '../models/square.py'])
-        # self.assertEqual(error_check.total_errors, 6)
 
 
 if __name__ == "__main__":
