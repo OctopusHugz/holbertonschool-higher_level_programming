@@ -20,7 +20,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """This function returns the JSON string representation of
 list_dictionaries"""
-        if list_dictionaries is None or not list_dictionaries:
+        if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -65,10 +65,13 @@ to a file"""
         new_list = []
         if not os.path.isfile(filename):
             return new_list
-        # with open(filename) as fp:
-        #    json_string = fp.read()
+        with open(filename) as fp:
+            json_string = fp.read()
         # cls_dict = cls.to_dictionary(json_string)
         # print(cls_dict)
         # cls_inst = cls.from_json_string(json_string)
         # print(cls_inst)
+        # new_dict = dict(cls.from_json_string(json_string))
+        # new_inst = cls.create(**new_dict)
+        # new_list.append(new_inst)
         return new_list
