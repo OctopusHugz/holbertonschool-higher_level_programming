@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module implements the TestRectangle class"""
 import unittest
-#from models.base import Base
+# from models.base import Base
 from models.rectangle import Rectangle
 
 
@@ -49,7 +49,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(
             r6_dict, {'x': 98, 'y': 140, 'id': 13, 'height': 42, 'width': 22})
 
-        #json_dict = Base.to_json_string([r6_dict])
+        # json_dict = Base.to_json_string([r6_dict])
 
         # r5 = Rectangle(2, 2)
         # self.assertEqual(r5.display(), "#""#""\n""#""#")
