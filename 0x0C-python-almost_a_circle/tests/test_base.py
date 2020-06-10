@@ -19,14 +19,25 @@ class TestBase(unittest.TestCase):
         b4 = Base(None)
         self.assertNotEqual(b4.id, 42)
 
-    def test_pep8(self):
-        """This function tests for pep8 conformance"""
-        p8s = pep8.StyleGuide(quiet=True)
-        error_check = p8s.check_files(
-            ['test_base.py', 'test_rectangle.py', 'test_square.py',
-             '../models/base.py', '../models/rectangle.py',
-             '../models/square.py'])
-        self.assertEqual(error_check.total_errors, 6)
+    def test_pep8_adherence(self):
+        """This function tests for adherence to pep8"""
+        errors = 0
+        f1 = pep8.Checker('tests/test_base.py')
+        f2 = pep8.Checker('tests/test_rectangle.py')
+        f3 = pep8.Checker('tests/test_square.py')
+        f4 = pep8.Checker('models/base.py')
+        f5 = pep8.Checker('models/rectangle.py')
+        f6 = pep8.Checker('models/square.py')
+        file_list = [f1, f2, f3, f4, f5, f6]
+        for files in file_list:
+            errors += files.check_all()
+        self.assertEqual(errors, 0)
+        # p8s = pep8.StyleGuide(quiet=True)
+        # error_check = p8s.check_files(
+        #    ['test_base.py', 'test_rectangle.py', 'test_square.py',
+        #     '../models/base.py', '../models/rectangle.py',
+        #     '../models/square.py'])
+        # self.assertEqual(error_check.total_errors, 6)
 
 
 if __name__ == "__main__":
