@@ -20,6 +20,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 42)
         self.assertEqual(r3.y, 98)
         self.assertEqual(r3.id, 12)
+        self.assertEqual(r3.__str__(), "[Rectangle] (12) 42/98 - 10/2")
+
         with self.assertRaises(TypeError):
             r1 = Rectangle()
         with self.assertRaises(TypeError):
