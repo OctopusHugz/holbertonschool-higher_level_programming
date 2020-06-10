@@ -9,14 +9,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_instantiation(self):
         """This function tests the setting of id attribute"""
-        with self.assertRaises(TypeError):
-            r1 = Rectangle()
-        with self.assertRaises(TypeError):
-            r1 = Rectangle(42)
-        with self.assertRaises(TypeError):
-            r1 = Rectangle(-42)
-        with self.assertRaises(TypeError):
-            r1 = Rectangle(None)
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
@@ -28,6 +20,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 42)
         self.assertEqual(r3.y, 98)
         self.assertEqual(r3.id, 12)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle()
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(42)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(-42)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(None)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(42, "holbie")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle("holbie", 98)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-42, 98)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(42, -98)
 
 
 if __name__ == "__main__":
