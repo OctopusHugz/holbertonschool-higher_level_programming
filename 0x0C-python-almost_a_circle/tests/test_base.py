@@ -13,6 +13,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b1.id, 42)
         b2 = Base(-42)
         self.assertEqual(b2.id, -42)
+        b3 = Base()
+        self.assertNotEqual(b3.id, 42)
+        b4 = Base(None)
+        self.assertNotEqual(b4.id, 42)
 
 
 if __name__ == "__main__":

@@ -30,11 +30,14 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s4.y, 98)
 
         s5 = Square(1, 1, 1, 1)
-        s5.update(y=98, size=22, id=13,  x=42)
+        s5.update(y=98, size=22, id=13, x=42)
         self.assertEqual(s5.id, 13)
         self.assertEqual(s5.size, 22)
         self.assertEqual(s5.x, 42)
         self.assertEqual(s5.y, 98)
+
+        s5_dict = s5.to_dictionary()
+        self.assertEqual(s5_dict, {'id': 13, 'x': 42, 'size': 22, 'y': 98})
 
         with self.assertRaises(TypeError):
             s1 = Square()
