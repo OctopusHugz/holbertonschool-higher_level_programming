@@ -9,14 +9,6 @@ class TestSquare(unittest.TestCase):
 
     def test_square_instantiation(self):
         """This function tests the setting of id attribute"""
-        with self.assertRaises(TypeError):
-            s1 = Square()
-        with self.assertRaises(TypeError):
-            s1 = Square("holbie")
-
-        with self.assertRaises(ValueError):
-            s1 = Square(-42)
-
         s1 = Square(42)
         self.assertEqual(s1.size, 42)
         s2 = Square(42, 13, 22, 98)
@@ -24,6 +16,24 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s2.y, 22)
         self.assertEqual(s2.id, 98)
         self.assertEqual(s2.__str__(), "[Square] (98) 13/22 - 42")
+        s3 = Square(42, 13, 22, -98)
+        self.assertEqual(s3.id, -98)
+
+        with self.assertRaises(TypeError):
+            s1 = Square()
+        with self.assertRaises(TypeError):
+            s1 = Square("holbie")
+        with self.assertRaises(TypeError):
+            s1 = Square(42, "holbie")
+        with self.assertRaises(TypeError):
+            s1 = Square(42, 98, "holbie")
+
+        with self.assertRaises(ValueError):
+            s1 = Square(-42)
+        with self.assertRaises(ValueError):
+            s1 = Square(42, -98)
+        with self.assertRaises(ValueError):
+            s1 = Square(42, 98, -13)
 
 
 if __name__ == "__main__":
