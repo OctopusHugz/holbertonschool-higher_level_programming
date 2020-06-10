@@ -33,13 +33,25 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r1 = Rectangle(None)
         with self.assertRaises(TypeError):
-            r1 = Rectangle(42, "holbie")
+            r1 = Rectangle("holbie")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle([42])
         with self.assertRaises(TypeError):
             r1 = Rectangle("holbie", 98)
         with self.assertRaises(TypeError):
+            r1 = Rectangle([42], 98)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(42, "holbie")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(42, [98])
+        with self.assertRaises(TypeError):
             r1 = Rectangle(42, 98, "holbie", 0)
         with self.assertRaises(TypeError):
+            r1 = Rectangle(42, 98, [13], 0)
+        with self.assertRaises(TypeError):
             r1 = Rectangle(42, 98, 0, "holbie")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(42, 98, 0, [22])
 
         with self.assertRaises(ValueError):
             r1 = Rectangle(-42, 98)
