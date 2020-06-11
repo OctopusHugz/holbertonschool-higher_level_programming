@@ -67,11 +67,8 @@ to a file"""
             return new_list
         with open(filename) as fp:
             json_string = fp.read()
-        # cls_dict = cls.to_dictionary(json_string)
-        # print(cls_dict)
-        # cls_inst = cls.from_json_string(json_string)
-        # print(cls_inst)
-        # new_dict = dict(cls.from_json_string(json_string))
-        # new_inst = cls.create(**new_dict)
-        # new_list.append(new_inst)
+        cls_list = cls.from_json_string(json_string)
+        for items in cls_list:
+            new_inst = cls.create(**items)
+            new_list.append(new_inst)
         return new_list
