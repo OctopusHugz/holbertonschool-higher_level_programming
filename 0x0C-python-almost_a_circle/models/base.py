@@ -2,6 +2,7 @@
 """This module implements the Base class"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -71,4 +72,47 @@ to a file"""
         for items in cls_list:
             new_inst = cls.create(**items)
             new_list.append(new_inst)
+        return new_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """This functions saves a list of objects to a CSV file"""
+        r_fields = ['id', 'width', 'height', 'x', 'y']
+        s_fields = ['id', 'size', 'x', 'y']
+        filename = cls.__name__ + ".csv"
+        new_list = []
+        with open(filename, "w") as fp:
+            if cls.__name__ == "Rectangle":
+                dict_writer = csv.DictWriter(fp, fieldnames=r_fields)
+            elif cls.__name__ == "Square":
+                dict_writer = csv.DictWriter(fp, fieldnames=s_fields)
+            dict_writer.writeheader()
+            for objs in list_objs:
+                dict_writer.writerow(objs.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """This functions loads a list of objects from a CSV file"""
+        fields = []
+        rows = []
+        new_dict = {}
+        new_list = []
+        key = ""
+        filename = cls.__name__ + ".csv"
+        with open(filename) as fp:
+            reader = csv.reader(fp)
+            fields = next(reader)
+            for row in reader:
+                rows.append(row)
+        print(fields)
+        print(rows)
+        for row in rows:
+            i = 0
+            new_dict = new_dict.fromkeys(fields)
+            for attr in fields:
+                key = fields[i]
+                value = row[i]
+                new_dict[key] = value
+                i += 1
+            new_list.append(cls.create(**new_dict))
         return new_list
