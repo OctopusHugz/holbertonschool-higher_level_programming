@@ -104,8 +104,6 @@ to a file"""
             fields = next(reader)
             for row in reader:
                 rows.append(row)
-        print(fields)
-        print(rows)
         for row in rows:
             i = 0
             new_dict = new_dict.fromkeys(fields)
