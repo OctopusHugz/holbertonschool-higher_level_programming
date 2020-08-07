@@ -6,14 +6,17 @@ from sys import argv
 
 def get_all_states():
     """This function gets all the states and prints them row by row"""
-    db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states")
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
-    db.close()
+    try:
+        db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+        cur = db.cursor()
+        cur.execute("SELECT * FROM states")
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+        cur.close()
+        db.close()
+    except:
+        pass
 
 if __name__ == '__main__':
     get_all_states()
