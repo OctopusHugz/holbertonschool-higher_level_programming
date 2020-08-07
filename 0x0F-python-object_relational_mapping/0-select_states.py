@@ -4,7 +4,7 @@ import MySQLdb
 from sys import argv
 
 
-def get_all_states():
+def select_states():
     """This function gets all the states and prints them row by row"""
     try:
         db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
@@ -19,4 +19,4 @@ def get_all_states():
         pass
 
 if __name__ == '__main__':
-    get_all_states()
+    select_states()
