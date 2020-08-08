@@ -9,7 +9,7 @@ def my_filter_states():
     """This function gets all the states matching the expression provided by
 the user and prints them row by row"""
     try:
-        string = "SELECT * FROM states WHERE name = '" + argv[4] + "'"
+        string = "SELECT * FROM states WHERE name = '{}';".format(argv[4])
         db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
         cur = db.cursor()
         cur.execute(string)
