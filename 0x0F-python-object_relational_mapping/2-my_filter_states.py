@@ -8,19 +8,16 @@ from sys import argv
 def my_filter_states():
     """This function gets all the states matching the expression provided by
 the user and prints them row by row"""
-    try:
-        string = """SELECT * FROM states WHERE
-        name = '{}' ORDER BY id;""".format(argv[4])
-        db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
-        cur = db.cursor()
-        cur.execute(string)
-        rows = cur.fetchall()
-        for row in rows:
-            print(row)
-        cur.close()
-        db.close()
-    except Exception as e:
-        print(e)
+    string = """SELECT * FROM states WHERE
+    name = '{}' ORDER BY id;""".format(argv[4])
+    db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    cur = db.cursor()
+    cur.execute(string)
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    db.close()
 
 
 if __name__ == '__main__':
