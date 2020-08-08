@@ -15,7 +15,8 @@ the user and prints them row by row"""
     cur.execute(string)
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     cur.close()
     db.close()
 
