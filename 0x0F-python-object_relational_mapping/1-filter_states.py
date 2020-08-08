@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """This module lists all states from the
 database hbtn_0e_0_usa starting with N"""
-import MySQLdb
-from sys import argv
 
 
 def filter_states():
@@ -20,4 +18,6 @@ and prints them row by row"""
 
 
 if __name__ == '__main__':
+    import MySQLdb
+    from sys import argv
     filter_states()
