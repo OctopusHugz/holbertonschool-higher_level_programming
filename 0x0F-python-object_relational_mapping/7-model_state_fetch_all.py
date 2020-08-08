@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module lists all State objects from the database hbtn_0e_6_usa"""
-from model_state import Session, State
+from model_state import Base, State, Session
 
 
 def model_state_fetch_all():
