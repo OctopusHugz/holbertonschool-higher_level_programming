@@ -9,10 +9,10 @@ from model_state import Base, State
 def model_state_insert():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
     session = Session()
-    state = State(6, "Louisiana")
-    print(str(state.id))
+    state = State("Louisiana")
     session.add(state)
     session.commit()
+    print(str(state.id))
     session.close()
 
 
