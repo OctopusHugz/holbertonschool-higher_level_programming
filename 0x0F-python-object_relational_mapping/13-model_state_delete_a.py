@@ -9,13 +9,6 @@ def model_state_delete_a():
         session = Session()
         states = session.query(State).filter(State.name.like(
             '%a%')).delete(synchronize_session=False)
-        # for state in states:
-        # print(state.name)
-        # if 'a' in state.name:
-        #    print(state.name)
-        # states.remove(state)
-        # for state in states:
-        #    print(str(state.id) + ": " + str(state.name))
         session.commit()
         session.close()
     except Exception as e:
