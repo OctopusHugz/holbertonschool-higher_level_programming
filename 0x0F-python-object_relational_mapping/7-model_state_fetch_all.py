@@ -1,24 +1,35 @@
 #!/usr/bin/python3
 """This module lists all State objects from the database hbtn_0e_6_usa"""
-import MySQLdb
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import (create_engine)
+from sqlalchemy import Table
+from sqlalchemy import select
 from sys import argv
-from model_state import Base, State
+
+from sqlalchemy.sql.schema import MetaData
+from model_state import Base, State, Session
+
+Base = declarative_base()
 
 
 def model_state_fetch_all():
     """This function lists all State objects from the database hbtn_0e_6_usa"""
     try:
-        db = MySQLdb.connect(host="localhost", port=3306,
-                             user=argv[1], passwd=argv[2], db=argv[3])
-        cur = db.cursor()
-        cur.execute("SELECT * FROM states;")
-        rows = cur.fetchall()
-        for row in rows:
-            print(str(row[0])+ ": " + str(row[1]))
-        cur.close()
-        db.close()
-    except Exception as e:
-        print(e)
+        session = Session()
+        states = session.query(State).all()
+        for state in states:
+            print(str(state.id) + ": " + str(state.name))
+            #print(state.id, state.name)
+        #conn = engine.connect()
+        #meta = MetaData(engine)
+        #table = meta.tables['states']
+        #ss = select([table])
+        #rows = conn.execute(ss)
+        #for row in rows:
+        #    print(row)
+    except:
+        pass
 
 
 if __name__ == '__main__':
