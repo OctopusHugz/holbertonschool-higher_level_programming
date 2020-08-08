@@ -19,8 +19,8 @@ the user and prints them row by row"""
             print(row)
         cur.close()
         db.close()
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':
