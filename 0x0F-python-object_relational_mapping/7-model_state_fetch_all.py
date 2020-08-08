@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module lists all State objects from the database hbtn_0e_6_usa"""
 from sys import argv
-from sqlalchemy.engine import create_engine
+from sqlalchemy import create_engine
 from sqlalchemy.orm.session import sessionmaker
 from model_state import Base, State
 
