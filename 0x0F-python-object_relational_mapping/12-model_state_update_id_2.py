@@ -10,9 +10,7 @@ def model_state_update_id_2():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
     session = Session()
     state = session.query(State).filter(State.id == 2)
-    print(state[0].name)
     state[0].name = "New Mexico"
-    print(state[0].name)
     session.commit()
     session.close()
 
