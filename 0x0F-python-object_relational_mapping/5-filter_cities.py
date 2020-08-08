@@ -14,7 +14,7 @@ the user and prints them row by row, safe from SQL injection"""
         cur = db.cursor()
         cur.execute("""SELECT cities.name FROM cities
                     LEFT JOIN states ON cities.state_id = states.id
-                    WHERE states.name = 'Texas'""")
+                    WHERE states.name = '{}'""".format(argv[4]))
         rows = cur.fetchall()
         for row in rows:
             print(row[0] + ", " if row != rows[-1] else row[0], end='')
