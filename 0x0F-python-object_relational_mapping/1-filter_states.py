@@ -10,10 +10,11 @@ and prints them row by row"""
     from sys import argv
     db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id;")
+    cur.execute("SELECT * FROM states ORDER BY id;")
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     cur.close()
     db.close()
 
