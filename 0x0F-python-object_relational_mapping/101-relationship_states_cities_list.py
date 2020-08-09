@@ -8,7 +8,7 @@ from sqlalchemy.orm.session import sessionmaker
 from relationship_state import Base
 
 
-def model_state_insert():
+def relationship_states_cities_list():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
     session = Session()
     rows = session.query(State, City).join(
@@ -22,8 +22,6 @@ def model_state_insert():
                 print("{:d}: {}".format(row[0].id, row[0].name))
         print("\t{:d}: {}".format(row[1].id, row[1].name))
         count += 1
-    session.commit()
-    session.close()
 
 
 if __name__ == '__main__':
@@ -31,4 +29,4 @@ if __name__ == '__main__':
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
-    model_state_insert()
+    relationship_states_cities_list()
