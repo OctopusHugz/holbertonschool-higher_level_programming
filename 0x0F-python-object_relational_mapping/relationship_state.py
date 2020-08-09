@@ -3,9 +3,9 @@
 from sqlalchemy.ext.declarative.api import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String
-#from model_state import Base
 
 Base = declarative_base()
+
 
 class State(Base):
     """This is an instance of the State class"""
