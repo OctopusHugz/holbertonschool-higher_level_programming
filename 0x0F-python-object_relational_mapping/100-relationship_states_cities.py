@@ -1,22 +1,18 @@
 #!/usr/bin/python3
 """This module lists the first State object from the database hbtn_0e_6_usa"""
-from sqlalchemy.orm import relationship
 from relationship_city import City
+from relationship_state import State
 from sys import argv
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm.session import sessionmaker
-from model_state import Base, State
+from relationship_state import Base
 
 
 def model_state_insert():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
     session = Session()
-    state = State("California")
-    state.cities = relationship("City", back_populates="cities")
+    state = State(name="California", cities=[City(name="San Francisco")])
     session.add(state)
-    session.commit()
-    city = City("San Francisco", 1)
-    session.add(city)
     session.commit()
     session.close()
 
