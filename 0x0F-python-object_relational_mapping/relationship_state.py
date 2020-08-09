@@ -13,7 +13,7 @@ class State(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", backref="states")
+    cities = relationship("City", back_populates="states")
 
     def __init__(self, name, cities, id=None):
         self.id = id
