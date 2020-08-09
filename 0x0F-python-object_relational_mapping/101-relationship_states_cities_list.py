@@ -11,8 +11,8 @@ from relationship_state import Base
 def model_state_insert():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
     session = Session()
-    rows = session.query(State, City).filter(
-        State.id == City.state_id).order_by(State.id, City.id).all()
+    rows = session.query(State, City).join(
+        State.cities).order_by(State.id, City.id).all()
     count = 0
     for row in rows:
         sid1 = rows[count][0].id
