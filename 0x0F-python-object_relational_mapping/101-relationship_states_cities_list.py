@@ -11,17 +11,11 @@ from relationship_state import Base
 def relationship_states_cities_list():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
     session = Session()
-    rows = session.query(State, City).join(
-        State.cities).order_by(State.id, City.id).all()
-    count = 0
-    for row in rows:
-        sid1 = rows[count][0].id
-        if count < len(rows) - 1:
-            sid2 = rows[count - 1][0].id
-            if sid1 != sid2:
-                print("{:d}: {}".format(row[0].id, row[0].name))
-        print("\t{:d}: {}".format(row[1].id, row[1].name))
-        count += 1
+    rows = session.query(State).all()
+    for state in rows:
+        print("{:d}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("\t{:d}: {}".format(city.id, city.name))
 
 
 if __name__ == '__main__':
