@@ -15,7 +15,7 @@ contained in the database hbtn_0e_101_usa"""
     session = Session()
     rows = session.query(State).all()
     for state in rows:
-        print(state)
+        print("{:d}: {}".format(state.id, state.name))
         for city in state.cities:
             print("\t{:d}: {}".format(city.id, city.name))
 
