@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module lists all State objects from the database hbtn_0e_6_usa"""
+"""This module lists all City objects from the database hbtn_0e_14_usa"""
 from sys import argv
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm.session import sessionmaker
@@ -8,7 +8,7 @@ from model_state import Base, State
 
 
 def model_city_fetch_by_state():
-    """This function lists all State objects from the database hbtn_0e_6_usa"""
+    """This function lists all City objects from the database hbtn_0e_14_usa"""
     session = Session()
     for state, city in session.query(State, City).\
             filter(State.id == City.state_id):
