@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module lists the first State object from the database hbtn_0e_6_usa"""
+"""This module creates the State “California” with the City “San Francisco”
+from the database hbtn_0e_100_usa"""
 from relationship_city import City
 from relationship_state import State
 from sys import argv
@@ -9,12 +10,12 @@ from relationship_state import Base
 
 
 def model_state_insert():
-    """This function lists 1st State object from the database hbtn_0e_6_usa"""
+    """This function creates the State “California” with the City
+“San Francisco” from the database hbtn_0e_100_usa"""
     session = Session()
     state = State(name="California", cities=[City(name="San Francisco")])
     session.add(state)
     session.commit()
-    session.close()
 
 
 if __name__ == '__main__':
