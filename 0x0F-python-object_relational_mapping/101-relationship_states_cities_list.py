@@ -13,9 +13,9 @@ def relationship_states_cities_list():
     session = Session()
     rows = session.query(State).all()
     for state in rows:
-        print(state)
+        print("{:d}: {}".format(state.id, state.name))
         for city in state.cities:
-            print(city)
+            print("\t{:d}: {}".format(city.id, city.name))
 
 
 if __name__ == '__main__':
