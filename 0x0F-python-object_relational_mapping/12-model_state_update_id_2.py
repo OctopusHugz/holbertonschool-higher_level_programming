@@ -11,8 +11,7 @@ def model_state_update_id_2():
     """This function changes the name of a State object from the database
 hbtn_0e_6_usa"""
     session = Session()
-    state = session.query(State).get(2)
-    state.name = "New Mexico"
+    session.query(State).get(2).name = "New Mexico"
     session.commit()
 
 
