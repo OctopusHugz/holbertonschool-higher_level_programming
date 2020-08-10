@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module lists the first State object from the database hbtn_0e_6_usa"""
+"""This module lists State objects from the database hbtn_0e_6_usa"""
 from sys import argv
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm.session import sessionmaker
@@ -7,7 +7,8 @@ from model_state import Base, State
 
 
 def model_state_my_get():
-    """This function lists 1st State object from the database hbtn_0e_6_usa"""
+    """This function lists 1st State object from the database hbtn_0e_6_usa
+with a name matching the one provided by the user"""
     session = Session()
     states = session.query(State).all()
     for state in states:
