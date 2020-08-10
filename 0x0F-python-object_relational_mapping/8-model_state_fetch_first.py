@@ -10,10 +10,7 @@ def model_state_fetch_first():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
     session = Session()
     state = session.query(State).first()
-    if not state:
-        print("Nothing")
-    else:
-        print(str(state.id) + ": " + str(state.name))
+    print(state if state else "Nothing")
 
 
 if __name__ == '__main__':
