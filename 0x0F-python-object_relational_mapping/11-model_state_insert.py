@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module lists the first State object from the database hbtn_0e_6_usa"""
+"""This module adds a new State object to the database hbtn_0e_6_usa"""
 from sys import argv
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm.session import sessionmaker
@@ -7,13 +7,12 @@ from model_state import Base, State
 
 
 def model_state_insert():
-    """This function lists 1st State object from the database hbtn_0e_6_usa"""
+    """This function adds Louisiana to the database hbtn_0e_6_usa"""
     session = Session()
     state = State("Louisiana")
     session.add(state)
     session.commit()
     print(str(state.id))
-    session.close()
 
 
 if __name__ == '__main__':
