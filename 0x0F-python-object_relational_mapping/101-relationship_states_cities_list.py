@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module lists the first State object from the database hbtn_0e_6_usa"""
+"""This module lists all State objects, and corresponding City objects,
+contained in the database hbtn_0e_101_usa"""
 from relationship_city import City
 from relationship_state import State
 from sys import argv
@@ -9,11 +10,12 @@ from relationship_state import Base
 
 
 def relationship_states_cities_list():
-    """This function lists 1st State object from the database hbtn_0e_6_usa"""
+    """This function lists all State objects, and corresponding City objects,
+contained in the database hbtn_0e_101_usa"""
     session = Session()
     rows = session.query(State).all()
     for state in rows:
-        print("{:d}: {}".format(state.id, state.name))
+        print(state)
         for city in state.cities:
             print("\t{:d}: {}".format(city.id, city.name))
 
