@@ -17,3 +17,6 @@ class State(Base):
     def __init__(self, name, id=None):
         self.id = id
         self.name = name
+
+    def __str__(self):
+        return str(self.id) + ": " + str(self.name)

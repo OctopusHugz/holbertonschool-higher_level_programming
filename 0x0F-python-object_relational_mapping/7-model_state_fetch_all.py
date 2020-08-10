@@ -11,8 +11,8 @@ def model_state_fetch_all():
     session = Session()
     states = session.query(State).all()
     for state in states:
-        print(str(state.id) + ": " + str(state.name))
-
+        #print(str(state.id) + ": " + str(state.name))
+        print(state)
 
 if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
