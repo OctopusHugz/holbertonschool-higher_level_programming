@@ -8,8 +8,7 @@ from model_state import Base, State
 
 def model_state_fetch_first():
     """This function lists 1st State object from the database hbtn_0e_6_usa"""
-    session = Session()
-    state = session.query(State).first()
+    state = Session().query(State).first()
     print(state if state else "Nothing")
 
 
