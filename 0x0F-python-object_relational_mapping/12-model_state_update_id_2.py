@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module lists the first State object from the database hbtn_0e_6_usa"""
+"""This module changes the name of a State object from the database
+hbtn_0e_6_usa"""
 from sys import argv
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm.session import sessionmaker
@@ -7,12 +8,12 @@ from model_state import Base, State
 
 
 def model_state_update_id_2():
-    """This function lists 1st State object from the database hbtn_0e_6_usa"""
+    """This function changes the name of a State object from the database
+hbtn_0e_6_usa"""
     session = Session()
-    state = session.query(State).filter(State.id == 2)
-    state[0].name = "New Mexico"
+    state = session.query(State).get(2)
+    state.name = "New Mexico"
     session.commit()
-    session.close()
 
 
 if __name__ == '__main__':
