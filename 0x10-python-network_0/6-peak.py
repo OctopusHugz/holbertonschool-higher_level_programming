@@ -5,6 +5,8 @@ def find_peak(list_of_integers):
     if list_of_integers:
         if list_of_integers[0] > list_of_integers[1]:
             return list_of_integers[0]
+        elif list_of_integers[-1] > list_of_integers[-2]:
+            return list_of_integers[-1]
         for index in range(1, len(list_of_integers) - 1):
             prev_num = list_of_integers[index - 1]
             curr_num = list_of_integers[index]
