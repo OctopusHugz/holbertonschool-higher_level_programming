@@ -9,11 +9,10 @@ if __name__ == "__main__":
     except:
         q = ""
     response = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
-    try:
-        rj = response.json()
-    except ValueError:
-        print("Not a valid JSON")
+    rj = response.json()
     if len(rj) == 0:
         print("No result")
+    elif type(rj['id']) != str or type(rj['name']) != str:
+        print("Not a valid JSON")
     else:
         print("[{:d}] {}".format(rj.get("id"), rj.get("name")))
