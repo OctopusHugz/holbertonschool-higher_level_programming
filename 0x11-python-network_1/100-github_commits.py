@@ -9,4 +9,4 @@ if __name__ == "__main__":
         "https://api.github.com/repos/{}/{}/commits".format(owner, repo))
     for commit in response.json()[:10]:
         print("{}: {}".format(commit.get("sha"),
-                        commit["commit"]["author"].get("name")))
+                              commit["commit"]["author"].get("name")))
