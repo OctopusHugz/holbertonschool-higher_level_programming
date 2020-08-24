@@ -12,7 +12,7 @@ if __name__ == "__main__":
     rj = response.json()
     if len(rj) == 0:
         print("No result")
-    elif type(rj['id']) != str or type(rj['name']) != str:
+    elif type(rj['id']) != int or type(rj['name']) != str:
         print("Not a valid JSON")
     else:
         print("[{:d}] {}".format(rj.get("id"), rj.get("name")))
