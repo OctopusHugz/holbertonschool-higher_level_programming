@@ -8,9 +8,6 @@ if (!process.argv[2] || !process.argv[3]) {
   if (parseInt(newArr[newArr.length - 1], 10) > parseInt(newArr[0], 10)) {
     newArr.reverse();
   }
-  const shifted = newArr.shift();
-  while (newArr[0] === shifted) {
-    newArr.shift();
-  }
+  newArr.shift();
   console.log(Math.max(...newArr));
 }
