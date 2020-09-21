@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const fs = require('fs');
-const read1 = fs.readFile(process.argv[2], function (err, fd) {
+fs.readFile(process.argv[2], function (err, fd) {
   if (err) {
     return console.error(err);
   }
@@ -10,7 +10,7 @@ const read1 = fs.readFile(process.argv[2], function (err, fd) {
     }
   });
 });
-const read2 = fs.readFile(process.argv[3], function (err, fd) {
+fs.readFile(process.argv[3], function (err, fd) {
   if (err) {
     return console.error(err);
   }
