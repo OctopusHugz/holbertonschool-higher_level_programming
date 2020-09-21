@@ -1,9 +1,8 @@
 #!/usr/bin/node
-const outerDict = require('./101-data');
-const innerDict = outerDict.dict;
+const dict = require('./101-data').dict;
 const newDict = {};
-for (var key in innerDict) {
-  var value = innerDict[key];
+for (var key in dict) {
+  var value = dict[key];
   if (newDict[value]) newDict[value].push(key);
   else {
     newDict[value] = [];
