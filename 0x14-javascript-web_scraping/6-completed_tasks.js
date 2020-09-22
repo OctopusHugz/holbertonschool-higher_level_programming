@@ -2,7 +2,7 @@
 const request = require('request');
 const newDict = {};
 request(process.argv[2], function (error, response, body) {
-  if (error) console.error('error:', error);
+  if (error) console.log('error:', error);
   const result = JSON.parse(body);
   result.forEach((currentItem) => {
     if (!newDict[currentItem.userId]) {
