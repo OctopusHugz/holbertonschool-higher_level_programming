@@ -21,17 +21,4 @@ request(url, async function (error, response, body) {
     const characterUrl = characters[index];
     await printFunc(characterUrl);
   }
-  //   characters.forEach(async (characterUrl) => printFunc(characterUrl));
 });
-// function printFunc (body) {
-//   console.log(JSON.parse(body).name);
-// }
-// const characters = request(url, function (error, response, body) {
-//   if (error) console.log('error:', error);
-//   console.log(JSON.parse(body));
-//   characters.forEach((characterUrl) => {
-//     request(characterUrl, printFunc(body));
-//   });
-//   return JSON.parse(body).characters;
-// });
-// console.log(characters);
