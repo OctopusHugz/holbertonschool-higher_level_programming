@@ -7,7 +7,10 @@ request(process.argv[2], function (error, response, body) {
     let count = 0;
     films.forEach((film) => {
       film.characters.forEach((character) => {
-        if (character === 'https://swapi-api.hbtn.io/api/people/18/') {
+        // if (character === 'https://swapi-api.hbtn.io/api/people/18/') {
+        //   count++;
+        // }
+        if (character.endsWith('18/')) {
           count++;
         }
       });
