@@ -7,7 +7,7 @@ request(process.argv[2], function (error, response, body) {
     let count = 0;
     films.forEach((film) => {
       film.characters.forEach((character) => {
-        if (character.includes('18/')) {
+        if (character.includes('18')) {
           count++;
         }
       });
