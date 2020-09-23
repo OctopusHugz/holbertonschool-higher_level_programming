@@ -5,10 +5,10 @@ request(process.argv[2], function (error, response, body) {
   if (error) console.log('error:', error);
   const tasks = JSON.parse(body);
   tasks.forEach((task) => {
-    if (!newDict[task.userId] && task.completed === true) {
+    if (!newDict[task.userId] && task.completed) {
       newDict[task.userId] = 0;
     }
-    if (task.completed === true) {
+    if (task.completed) {
       newDict[task.userId]++;
     }
   });
